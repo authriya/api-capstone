@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+.object-image {
+    width: 300px;
+    height: auto;
+    max-height: 500px;
+}
+
+.item {
+    margin-bottom: 100px;
+}
+
+.left-float {
+    display: block;
+    width: 50%;
+}
+
+.right-float {
+    display: block;
+    width: 50%;
+}
