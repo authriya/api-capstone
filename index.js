@@ -7,18 +7,17 @@ const baseURL = 'https://www.rijksmuseum.nl/api/en/collection/';
 function watchFormSubmit() {
     $('.search-form').submit(event => {
         event.preventDefault();
-        const artist= $('.artist').val();
         const year= $('.year').val();
         const searchQuery= $('.random-query').val();
         const listNumber= $('.number').val();
         if(year == false & listNumber <= 50) {
-            getParamsSubmit(artist, year, searchQuery, listNumber)
+            getParamsSubmit(year, searchQuery, listNumber)
         }
         else if(year > 21 || year < 0) {
             alert('Please enter a century value between 0 and 21. We wish we could predict great art too.')
         } else if(listNumber > 50) {
             alert('Please limit the number of objects you want to see between 1 and 50.')
-        } else {getParamsSubmit(artist, year, searchQuery, listNumber)}
+        } else {getParamsSubmit(year, searchQuery, listNumber)}
     });
 }
 
@@ -46,9 +45,8 @@ function getParamsRandom() {
     getObjectsRandom(params);
 }
 
-function getParamsSubmit(artist, year, searchQuery, listNumber) {
+function getParamsSubmit(year, searchQuery, listNumber) {
     const params = {
-        maker: artist,
         'f.dating.period': year,
         ps: listNumber,
         s: 'relevance',
