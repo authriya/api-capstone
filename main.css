@@ -1,19 +1,104 @@
 * {
     box-sizing: border-box;
+    background-color: rgb(233, 230, 230);
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 10px 50px;
+    margin: 10px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+section {
+    padding: 30px 0px;
+}
+
+h1,h2,h3,label{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+h1 {
+    font-weight: 800;
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+form {
+    background: white;
+    padding: 20px 5px;
+    text-align: center;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 280px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+}
+label {
+    font-size: 14px;
+    background: none;
+}
+
+input {
+    background: none;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    padding: 5px 0px;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input.button {
+    background-color: rgb(59, 59, 59);
+    color: white;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+p.or {
+    text-align: center;
 }
 
 .object-image {
-    width: 300px;
+    width: 280px;
     height: auto;
     max-height: 500px;
+    display: block;
+    margin: auto;
+}
+div.item {
+    padding-bottom: 100px;
+    width: 280px;
+    margin: auto;
 }
 
-.item {
-    margin-bottom: 100px;
+h3.list-text {
+    font-size: 15px;
+}
+p.list-text {
+    font-size: 14px;
 }
 
 .left-float {
@@ -27,3 +112,5 @@ body {
 label, input {
     margin-bottom: 10px;
 }
+
+@media screen and (min-width: )

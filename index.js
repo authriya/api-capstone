@@ -4,6 +4,8 @@ const apiKey = 'teY9qqK1';
 
 const baseURL = 'https://www.rijksmuseum.nl/api/en/collection/';
 
+$('.button').click(function() {$('body').scrollTo(document.getElementById('results'),800);});
+
 function watchFormSubmit() {
     $('.search-form').submit(event => {
         event.preventDefault();
@@ -125,8 +127,7 @@ function displayArtRandom(responseJson) {
     if (responseJson.artObjects[x].hasImage === true) {
         $('.results').append(`<div class="item"><img src="${responseJson.artObjects[x].webImage.url}" class="object-image" id="object-image-${x}" alt="image for ${responseJson.artObjects[x].title}"> <h3 class="list-text"> ${responseJson.artObjects[x].longTitle} </h3> <p class="list-text">Click <a href="${responseJson.artObjects[x].links.web}" target="_blank">here</a> for more information</p><p class="list-text">This object's number is: ${responseJson.artObjects[x].objectNumber}</p></div>`);
     }
-    else {$('.results').append(`
-    <div class="item"><h3 class="list-text"> ${responseJson.artObjects[x].longTitle} </h3><p class="list-text"> This object has no image </p> <p class="list-text">Click <a href="${responseJson.artObjects[x].links.web}" target="_blank">here</a> for more information</p><p class="list-text">This object's number is: ${responseJson.artObjects[x].objectNumber}</p></div>`)
+    else {$('.results').append(`<div class="item"><h3 class="list-text"> ${responseJson.artObjects[x].longTitle} </h3><p class="list-text"> This object has no image </p> <p class="list-text">Click <a href="${responseJson.artObjects[x].links.web}" target="_blank">here</a> for more information</p><p class="list-text">This object's number is: ${responseJson.artObjects[x].objectNumber}</p></div>`)
     }
 }
 
