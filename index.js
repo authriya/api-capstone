@@ -105,7 +105,7 @@ function displayArtSubmit(responseJson) {
     $('.results').empty();
     const listNumber= $('.number').val();
     if (responseJson.artObjects.length === 0) {
-        $('.results').append(<p>We're sorry, we don't seem to have any items matching your search. Please try again!</p>)
+        $('.results').append(`<p>We're sorry, we don't seem to have any items matching your search. Please try again!</p>`)
     } else {for (let i = 0; i < listNumber & i < responseJson.artObjects.length; i++) {
         if (responseJson.artObjects[i].hasImage === true) {
             $('.results').append(`<div class="item"><img src="${responseJson.artObjects[i].webImage.url}" class="object-image" id="object-image-${i}" alt="image for ${responseJson.artObjects[i].title}"> <h3 class="list-text"> ${responseJson.artObjects[i].longTitle} </h3> <p class="list-text">Click <a href="${responseJson.artObjects[i].links.web}" target="_blank">here</a> for more information</p><p class="list-text">This object's number is: ${responseJson.artObjects[i].objectNumber}</p></div>`);
