@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 10px 50px;
+}
+
 .object-image {
     width: 300px;
     height: auto;
@@ -14,10 +18,12 @@
 
 .left-float {
     display: block;
-    width: 50%;
 }
 
 .right-float {
     display: block;
-    width: 50%;
+}
+
+label, input {
+    margin-bottom: 10px;
 }
