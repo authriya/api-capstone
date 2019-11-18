@@ -10,6 +10,3 @@ I wanted to create an app that could help someone either find art in the Rijksmu
 
 Search page:
 ![search page screenshot] (screenshots/searchpage.png)
-
-Results page:
-![results page screenshot] (screenshots/resultspage.png)
