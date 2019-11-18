@@ -7,3 +7,9 @@ https://authriya.github.io/rijksmuseum-art-finder/
 I wanted to create an app that could help someone either find art in the Rijksmuseum (the search feature) or just explore the art at random (the random feature). No plane tickets to Amsterdam necessary.
 
 ## Screenshots
+
+Search page:
+![search page screenshot] (screenshots/searchpage.png)
+
+Results page:
+![results page screenshot] (screenshots/resultspage.png)
