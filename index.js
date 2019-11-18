@@ -3,7 +3,7 @@
 const apiKey = 'teY9qqK1';
 
 const baseURL = 'https://www.rijksmuseum.nl/api/en/collection/';
-
+//below uses the cdn referenced in the html to scroll to the results section upon clicking either the submit button or the random button.
 $('.button').click(function() {$('body').scrollTo(document.getElementById('results'),800);});
 
 function watchFormSubmit() {
@@ -34,10 +34,15 @@ function generateRandomNumber() {
     let number= Math.random();
     return number
 }
-
+// comment for getParamsRandom:
+//p: Math.floor(generateRandomNumber()*1000) doing the magic here in generating the random image.
+//basically, p is the page number and ps (as you can see in getParamsSubmit() below) is the number of results on the page. By default, p is 10.
+//according to the api documentation p*ps needs to be lesser than 1000. So this code below allows me to generate a random number between 1 and 1000 for p, the search page.
+//go to displayArtRandom() to see how the displayed object is randomly selected from the page.
+//toppieces parameter means that the results only show objects considered top pieces.
 function getParamsRandom() {
     const params = {
-        p: Math.floor(generateRandomNumber()*1000),
+        p: Math.floor((generateRandomNumber()*1000)+1),
         key: apiKey,
         format: 'json',
         s: 'relevance',
@@ -102,6 +107,7 @@ function formatQueryParams(params) {
     return items.join('&');
 }
 
+// the if/else statements take into account whether the object has an image associated with it in the API database or not.
 function displayArtSubmit(responseJson) {
     console.log(responseJson);
     $('.results').empty();
@@ -118,12 +124,11 @@ function displayArtSubmit(responseJson) {
         };
     };
 }
-
+//here we generate a random number between [0, 1), multiply that by the array length (10 by default), and then round up that number to select an object from the array.
 function displayArtRandom(responseJson) {
     console.log(responseJson);
     $('.results').empty();
     let x = Math.floor((generateRandomNumber())*responseJson.artObjects.length);
-    console.log(x);
     if (responseJson.artObjects[x].hasImage === true) {
         $('.results').append(`<div class="item"><img src="${responseJson.artObjects[x].webImage.url}" class="object-image" id="object-image-${x}" alt="image for ${responseJson.artObjects[x].title}"> <h3 class="list-text"> ${responseJson.artObjects[x].longTitle} </h3> <p class="list-text">Click <a href="${responseJson.artObjects[x].links.web}" target="_blank">here</a> for more information</p><p class="list-text">This object's number is: ${responseJson.artObjects[x].objectNumber}</p></div>`);
     }
