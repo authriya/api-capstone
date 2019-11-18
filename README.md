@@ -9,4 +9,12 @@ I wanted to create an app that could help someone either find art in the Rijksmu
 ## Screenshots
 
 Search page:
-![search page screenshot] (https://github.com/authriya/rijksmuseum-art-finder/blob/master/screenshots/searchpage.png?raw=true)
+![screenshot of search page](/screenshots/searchpage.png)
+
+Resuls page:
+![screenshot of results page](/screenshots/resultspage.png)
+
+## Built With
+* HTML
+* CSS
+* Javascript
